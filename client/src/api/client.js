@@ -1,8 +1,17 @@
 import axios from 'axios';
 
 // Sanitize Base URL by stripping trailing slashes
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/v1';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'https://edubatch-backend.vercel.app/api/v1';
 const API_BASE_URL = rawBaseUrl.replace(/\/$/, '');
+
+// Diagnostic check: Alert developer if API URL accidentally points to frontend Vercel URL
+if (typeof window !== 'undefined' && API_BASE_URL.includes(window.location.host)) {
+  console.error(
+    `🚨 [EduBatch Error]: VITE_API_BASE_URL ("${API_BASE_URL}") is pointing to the FRONTEND domain! ` +
+    `API requests will fail with 405 Method Not Allowed. ` +
+    `Please set VITE_API_BASE_URL in Vercel to your BACKEND domain (e.g. https://your-backend-app.vercel.app/api/v1) and REDEPLOY.`
+  );
+}
 
 export const client = axios.create({
   baseURL: API_BASE_URL,
