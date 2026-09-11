@@ -245,3 +245,14 @@ npm run seed
 
 4. **Strict Input Validation & Security Headers**:
    API payloads are strictly validated using **Zod schemas** before business execution. HTTP headers are protected via **Helmet**, rate-limited via **express-rate-limit** (10 auth req / 15 min), and restricted to authorized frontend origins via CORS.
+
+---
+
+## 📐 System & Database Architecture Diagrams
+
+### 1. Full System Architecture Diagram
+![EduBatch System Architecture](documents/architecture.png)
+
+### 2. Database & Data Model Architecture Diagram
+![EduBatch Database Architecture](documents/Database_architecture.png)
+
