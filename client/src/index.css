@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Centralized EduBatch Theme Palette */
+    --primary: #00e5ff;
+    --primary-hover: #26ecff;
+    --secondary: #38bdf8;
+    --purple-primary: #5c24b5;
+    --purple-dark: #3b147d;
+    --amber-badge: #ffb703;
+    
+    --background: #f8fafc;
+    --white: #ffffff;
+    --dark: #0f172a;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+
+    /* Swiper Theme Colors */
+    --swiper-theme-color: #00e5ff;
+    --swiper-pagination-color: #00e5ff;
+    --swiper-navigation-color: #38bdf8;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased font-sans min-h-screen selection:bg-cyan-400 selection:text-slate-900;
+    margin: 0;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* Custom Theme Utilities */
+.bg-edubatch-hero {
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 45%, #3b82f6 100%);
+}
+
+.bg-edubatch-glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bg-cyan-button {
+  background: #00e5ff;
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(0, 229, 255, 0.4);
+}
+
+.bg-cyan-button:hover {
+  background: #26ecff;
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.text-gradient-sky {
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button & Component Utilities */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(0, 229, 255, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
+}
+
+.btn-amber {
+  background-color: var(--amber-badge);
+  color: #0f172a;
+}
+
+.btn-amber:hover {
+  background-color: #f59e0b;
+}
+
+/* Swiper Slider Layout Styles */
+.swiper {
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  list-style: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  display: flex;
+  position: relative;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  display: block;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

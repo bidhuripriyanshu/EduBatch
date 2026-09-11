@@ -1,0 +1,2 @@
+// Payments domain exports
+export {};
